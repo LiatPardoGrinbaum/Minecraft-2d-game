@@ -33,8 +33,8 @@ body {
 }
 
 .board {
-  width: 100vmin;
-  height: 100vmin;
+  width: 80vmin;
+  height: 80vmin;
   display: grid;
   grid-template-columns: repeat(20, 1fr);
   grid-template-rows: repeat(20, 1fr);
@@ -142,6 +142,12 @@ body {
   font-size: 0.9rem;
   border-radius: 10px;
 }
+.storage {
+  width: 25px;
+  height: 25px;
+  border: 2px solid white;
+  margin-top: 0.5rem;
+}
 
 .reset-btn:hover {
   background: rgb(0, 191, 6);
@@ -187,3 +193,25 @@ body {
     font-size: 20px;
   }
 }
+
+/* for functionality */
+[data-is-active="false"] {
+  /* visibility: hidden; */
+  background: lightskyblue;
+}
+
+/* [data-is-right="false"] {
+
+  animation-name: blink;
+  animation-duration: 0.5s;
+}
+
+
+
+@keyframes blink {
+  from {
+  }
+  to {
+    background: red;
+  }
+} */
