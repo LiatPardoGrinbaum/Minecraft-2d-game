@@ -1,204 +1,199 @@
-// const state = {
-//   draw: draw(),
-// };
+const game = {
+  matrix: [
+    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0, 7, 7, 0, 0, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0, 7, 7, 7, 7, 0, 0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 0, 0],
+    [0, 0, 0, 1, 1, 0, 0, 0, 7, 7, 7, 7, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0],
+    [0, 0, 1, 1, 1, 1, 0, 0, 0, 7, 7, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0],
+    [0, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 2, 2, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 2, 2, 2, 2, 2, 0, 0, 0, 0, 0, 0, 0, 2, 2, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 2, 2, 2, 2, 2, 0, 0, 0, 0, 0, 0, 2, 2, 2, 2, 2, 0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 2, 3, 2, 0, 0, 0, 0, 0, 0, 2, 2, 2, 2, 2, 2, 2, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 2, 2, 2, 2, 2, 0, 0, 0, 0, 0, 0, 0, 0],
+    [4, 4, 4, 4, 4, 6, 6, 0, 0, 0, 0, 0, 0, 2, 3, 2, 0, 0, 0, 6, 6, 0, 0, 0, 0],
+    [5, 5, 5, 5, 5, 6, 6, 6, 0, 0, 0, 0, 0, 0, 3, 0, 0, 0, 6, 6, 6, 6, 0, 0, 0],
+    [5, 5, 5, 5, 5, 4, 4, 6, 0, 0, 0, 0, 0, 0, 3, 0, 0, 0, 6, 6, 6, 6, 6, 0, 0],
+    [5, 5, 5, 5, 5, 5, 5, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4],
+    [5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5],
+    [5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5],
+    [5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5],
+    [5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5],
+    [5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5],
+    [5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5],
+  ],
+  gameBoard: document.querySelector(".board"),
+  storage: document.querySelector(".storage"),
+  tools: setTools(),
+  tiles: setTiles(),
+};
 
-const gameBoard = document.querySelector(".board");
-
-const matrix = [
-  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-  [0, 0, 0, 0, 0, 0, 0, 0, 7, 7, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-  [0, 0, 0, 0, 0, 0, 0, 7, 7, 7, 7, 0, 0, 0, 1, 1, 1, 0, 0, 0],
-  [0, 0, 0, 1, 1, 0, 0, 7, 7, 7, 7, 0, 0, 1, 1, 1, 1, 1, 0, 0],
-  [0, 0, 1, 1, 1, 1, 0, 0, 7, 7, 0, 0, 1, 1, 1, 1, 1, 1, 1, 0],
-  [0, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-  [0, 0, 2, 2, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-  [0, 2, 2, 2, 2, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-  [0, 2, 2, 2, 2, 2, 0, 0, 0, 0, 0, 0, 0, 2, 2, 2, 0, 0, 0, 0],
-  [0, 0, 2, 3, 2, 0, 0, 0, 0, 0, 0, 0, 2, 2, 2, 2, 2, 0, 0, 0],
-  [0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 2, 2, 2, 2, 2, 0, 0, 0],
-  [4, 4, 4, 4, 4, 6, 0, 0, 0, 0, 0, 0, 0, 2, 3, 2, 0, 0, 0, 6],
-  [5, 5, 5, 5, 5, 6, 6, 6, 0, 0, 0, 0, 0, 0, 3, 0, 0, 0, 6, 6],
-  [5, 5, 5, 5, 5, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4],
-  [5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5],
-  [5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5],
-  [5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5],
-  [5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5],
-  [5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5],
-];
-
+//create the textures elements as divs and draw the board game by giving it attributes and classes
 function draw() {
-  for (let row = 0; row < matrix.length; row++) {
-    for (let column = 0; column < matrix[row].length; column++) {
+  for (let row = 0; row < game.matrix.length; row++) {
+    for (let column = 0; column < game.matrix[row].length; column++) {
       const tile = document.createElement("div");
-      switch (matrix[row][column]) {
+      switch (game.matrix[row][column]) {
         case 0:
-          tile.setAttribute("data-is-active", true);
+          tile.setAttribute("data-is-active", "true");
           tile.setAttribute("data-name", "sky");
           tile.classList.add("tile");
           break;
         case 1:
-          tile.setAttribute("data-is-active", true);
+          tile.setAttribute("data-is-active", "true");
           tile.setAttribute("data-name", "cloud");
           tile.classList.add("tile");
           break;
         case 2:
-          tile.setAttribute("data-is-active", true);
+          tile.setAttribute("data-is-active", "true");
           tile.setAttribute("data-name", "leaves");
           tile.classList.add("tile");
           break;
         case 3:
-          tile.setAttribute("data-is-active", true);
+          tile.setAttribute("data-is-active", "true");
           tile.setAttribute("data-name", "wood");
           tile.classList.add("tile");
           break;
         case 4:
-          tile.setAttribute("data-is-active", true);
+          tile.setAttribute("data-is-active", "true");
           tile.setAttribute("data-name", "grass");
           tile.classList.add("tile");
           break;
         case 5:
-          tile.setAttribute("data-is-active", true);
+          tile.setAttribute("data-is-active", "true");
           tile.setAttribute("data-name", "dirt");
           tile.classList.add("tile");
           break;
         case 6:
-          tile.setAttribute("data-is-active", true);
+          tile.setAttribute("data-is-active", "true");
           tile.setAttribute("data-name", "stone");
           tile.classList.add("tile");
           break;
         case 7:
-          tile.setAttribute("data-is-active", true);
+          tile.setAttribute("data-is-active", "true");
           tile.setAttribute("data-name", "sun");
           tile.classList.add("tile");
           break;
       }
-      gameBoard.appendChild(tile);
+      game.gameBoard.appendChild(tile);
     }
   }
 }
 draw();
 
-const tools = document.querySelectorAll(".tool");
-for (let tool of tools) {
-  tool.setAttribute("data-is-open", false);
-  // tool.setAttribute("data-is-right", true);
+//create an array of tools divs and give it an attribute, add it to the game object
+function setTools() {
+  const tools = document.querySelectorAll(".tool");
+  const arr = [];
+  for (let tool of tools) {
+    tool.setAttribute("data-is-open", "false");
+    arr.push(tool);
+  }
+  return arr;
 }
 
-const pickAxe = tools[0];
-const shovel = tools[1];
-const axe = tools[2];
+//define varaibles for the tools
+[pickAxe, shovel, axe] = game.tools;
+//note to myself! (check why couldnt I put it inside the object as destrcturing array)
+//or couldnt use inside object tool : this.tools[0]
 
-const tiles = document.querySelectorAll(".tile");
-// console.log(tiles[28]);
-const storage = document.querySelector(".storage");
-
-pickAxe.addEventListener("click", function (e) {
-  this.setAttribute("data-is-open", true);
-  shovel.setAttribute("data-is-open", false);
-  axe.setAttribute("data-is-open", false);
-  this.style.backgroundColor = "rgb(48, 113, 154)";
-  shovel.style.backgroundColor = "rgb(129, 198, 255";
-  axe.style.backgroundColor = "rgb(129, 198, 255";
-  storage.style.border = "white 2px solid";
-  if (this.getAttribute("data-is-open")) {
-    for (let tile of tiles) {
-      tile.addEventListener("click", function () {
-        if (tile.getAttribute("data-name") === "stone") {
-          const isActive = this.getAttribute("data-is-active");
-          if (isActive) {
-            this.setAttribute("data-is-active", false);
-            const tileName = this.getAttribute("data-name");
-            storage.setAttribute("data-name", tileName);
-          }
-        } else {
-          this.setAttribute("data-is-active", true);
-        }
-        // else {
-        //   pickAxe.setAttribute("data-is-right", false);
-        // }
-      });
-    }
+//create an array of the tiles
+function setTiles() {
+  const tiles = document.querySelectorAll(".tile");
+  const arr = [];
+  for (let tile of tiles) {
+    arr.push(tile);
   }
-});
+  return arr;
+}
+const tiles = setTiles();
+//for some reason i coudlnt add setTiles() as a varaible in the object like i did with setTools. it return an empty object.!!
 
-shovel.addEventListener("click", function (e) {
-  this.setAttribute("data-is-open", true);
-  pickAxe.setAttribute("data-is-open", false);
-  axe.setAttribute("data-is-open", false);
-  this.style.backgroundColor = "rgb(48, 113, 154)";
-  pickAxe.style.backgroundColor = "rgb(129, 198, 255";
-  axe.style.backgroundColor = "rgb(129, 198, 255";
-  storage.style.border = "white 2px solid";
-  if (this.getAttribute("data-is-open")) {
-    for (let tile of tiles) {
-      tile.addEventListener("click", function () {
-        if (tile.getAttribute("data-name") === "dirt" || tile.getAttribute("data-name") === "grass") {
-          const isActive = this.getAttribute("data-is-active");
-          if (isActive) {
-            this.setAttribute("data-is-active", false);
-            const tileName = this.getAttribute("data-name");
-            storage.setAttribute("data-name", tileName);
-          }
-        } else {
-          this.setAttribute("data-is-active", true);
-        }
-        // else {
-        //   pickAxe.setAttribute("data-is-right", false);
-        // }
-      });
-    }
+function resetDataTools() {
+  game.tools.map((tool) => {
+    tool.setAttribute("data-is-open", "false");
+    tool.style.backgroundColor = "transparent";
+  });
+  game.storage.style.border = "white 2px solid";
+}
+
+function isValid(tile) {
+  const isActive = tile.getAttribute("data-is-active");
+  if (isActive) {
+    tile.setAttribute("data-is-active", "false");
+    const tileName = tile.getAttribute("data-name");
+    game.storage.setAttribute("data-name", tileName);
   }
-});
+}
 
-axe.addEventListener("click", function (e) {
-  this.setAttribute("data-is-open", true);
-  pickAxe.setAttribute("data-is-open", false);
-  shovel.setAttribute("data-is-open", false);
-  this.style.backgroundColor = "rgb(48, 113, 154)";
-  pickAxe.style.backgroundColor = "rgb(129, 198, 255";
-  shovel.style.backgroundColor = "rgb(129, 198, 255";
-  storage.style.border = "white 2px solid";
-  if (this.getAttribute("data-is-open")) {
-    for (let tile of tiles) {
-      tile.addEventListener("click", function () {
-        if (tile.getAttribute("data-name") === "wood" || tile.getAttribute("data-name") === "leaves") {
-          const isActive = this.getAttribute("data-is-active");
-          if (isActive) {
-            this.setAttribute("data-is-active", false);
-            const tileName = this.getAttribute("data-name");
-            storage.setAttribute("data-name", tileName);
-          }
-        } else {
-          this.setAttribute("data-is-active", true);
+function isNotValid(tile) {
+  tile.setAttribute("data-is-active", "true");
+  // tile.style.border = "red 1px solid";
+}
+function mainGame() {
+  for (let tool of game.tools) {
+    tool.addEventListener("click", function (e) {
+      resetDataTools();
+      this.setAttribute("data-is-open", "true");
+      this.style.backgroundColor = "rgb(48, 113, 154)";
+      if (this.getAttribute("data-is-open")) {
+        for (let tile of tiles) {
+          tile.addEventListener("click", function () {
+            if (this.getAttribute("data-name") === "stone" && tool.classList.contains("pickaxeTool")) {
+              isValid(this);
+            } else if (this.getAttribute("data-name") === "dirt" && tool.classList.contains("shovelTool")) {
+              isValid(this);
+            } else if (this.getAttribute("data-name") === "grass" && tool.classList.contains("shovelTool")) {
+              isValid(this);
+            } else if (this.getAttribute("data-name") === "wood" && tool.classList.contains("axeTool")) {
+              isValid(this);
+            } else if (this.getAttribute("data-name") === "leaves" && tool.classList.contains("axeTool")) {
+              isValid(this);
+            } else {
+              isNotValid(this);
+            }
+          });
         }
-        // else {
-        //   pickAxe.setAttribute("data-is-right", false);
-        // }
-      });
-    }
+      }
+    });
   }
-});
+}
 
-storage.addEventListener("click", function () {
-  pickAxe.style.backgroundColor = "rgb(129, 198, 255";
-  shovel.style.backgroundColor = "rgb(129, 198, 255";
-  axe.style.backgroundColor = "rgb(129, 198, 255";
+mainGame();
+
+game.storage.addEventListener("click", function () {
+  console.log(this);
+  // pickAxe.style.backgroundColor = "rgb(129, 198, 255";
+  // shovel.style.backgroundColor = "rgb(129, 198, 255";
+  // axe.style.backgroundColor = "rgb(129, 198, 255";
+  resetDataTools();
   this.style.border = "2px solid blue";
-  console.log(this.getAttribute("data-name"));
-  if (this.getAttribute("data-name") !== null) {
+
+  if (this.getAttribute("data-name") !== "null") {
     for (let tile of tiles) {
       tile.addEventListener("click", function () {
         // console.log(tile);
         const isActive = this.getAttribute("data-is-active");
         // console.log("this is", this);
         // console.log("isActive", isActive);
-        if (isActive === "false" || (this.getAttribute("data-name") === "sky" && storage.getAttribute("data-name") !== null)) {
-          // console.log("inside if", this);
-          const name = storage.getAttribute("data-name");
-          this.setAttribute("data-name", name);
-          this.setAttribute("data-is-active", true);
-          storage.removeAttribute("data-name");
+        if (game.storage.getAttribute("data-name") !== "null") {
+          console.log(typeof game.storage.getAttribute("data-name"));
+          console.log(game.storage.getAttribute("data-name"));
+          console.log("hii");
+          if (isActive === "false" || this.getAttribute("data-name") === "sky") {
+            // console.log("inside if", this);
+
+            const name = game.storage.getAttribute("data-name");
+            console.log(game.storage);
+            this.setAttribute("data-name", name);
+            this.setAttribute("data-is-active", "true");
+            game.storage.setAttribute("data-name", "null");
+            console.log(game.storage);
+          }
         }
       });
     }

@@ -5,7 +5,8 @@
 }
 
 body {
-  background: rgb(229, 248, 255);
+  background: linear-gradient(rgb(229, 248, 255), lightskyblue);
+
   height: 100vh;
   display: flex;
   justify-content: center;
@@ -21,6 +22,16 @@ body {
   /* animation: transitionIn 0.75s; */
   /* border: black 1px solid; */
   width: 100%;
+  animation: transitionIn 2.5s;
+}
+@keyframes transitionIn {
+  from {
+    opacity: 0;
+    transform: translateY(-100px);
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 .board-wrap {
@@ -29,16 +40,18 @@ body {
   align-items: center;
   /* border: black 1px solid; */
   flex-grow: 4;
+
   /* height: 100%; */
 }
 
 .board {
-  width: 80vmin;
-  height: 80vmin;
+  width: 100vmin;
+  height: 100vmin;
+  padding: 2rem;
   display: grid;
-  grid-template-columns: repeat(20, 1fr);
-  grid-template-rows: repeat(20, 1fr);
-
+  grid-template-columns: repeat(25, 1fr);
+  grid-template-rows: repeat(25, 1fr);
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   /* grid-template-areas: ; */
 }
 
@@ -72,24 +85,33 @@ body {
   align-items: center;
   justify-content: center;
   height: 100%;
-  background: rgb(151, 226, 255);
+  min-width: 180px;
+  flex-grow: 1;
+  background: linear-gradient(rgb(229, 248, 255), lightskyblue);
 }
 .tools {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background: rgb(129, 198, 255);
-  margin: 0 2rem;
+  /* background: rgb(92, 244, 255); */
+  /* margin: 0 2rem; */
+  height: 100vmin;
+  /* max-width: 500px; */
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 .tool {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  transition: 0.5s;
+
+  /* border: 3px solid rgb(92, 244, 255); */
 }
 
 .tool:hover {
   background: white;
+  cursor: pointer;
 }
 
 .pickaxeTool {
@@ -103,7 +125,7 @@ body {
   margin-bottom: 0.5rem;
 }
 
-.pickaxeTool p {
+.tools p {
   font-weight: bold;
 }
 
@@ -117,22 +139,14 @@ body {
   margin-bottom: 0.5rem;
 }
 
-.shovelTool p {
-  font-weight: bold;
-}
-
-.AxeTool {
+.axeTool {
   width: 80px;
   height: 100px;
 }
-.AxeTool div {
+.axeTool div {
   background: url("/images/axe.png") no-repeat center center/contain;
   height: 50px;
   margin-bottom: 0.5rem;
-}
-
-.AxeTool {
-  font-weight: bold;
 }
 
 .reset-btn {
@@ -149,9 +163,15 @@ body {
   margin-top: 0.5rem;
 }
 
+.storage:hover {
+  cursor: pointer;
+  border: 2px solid rgb(94, 169, 255);
+}
+
 .reset-btn:hover {
-  background: rgb(0, 191, 6);
+  background: rgb(39, 98, 102);
   color: whitesmoke;
+  cursor: pointer;
 }
 
 @media (max-width: 768px) {
@@ -167,7 +187,8 @@ body {
   .tools {
     flex-direction: row;
     margin-top: 1rem;
-    width: 500px;
+    max-width: 450px;
+    height: 22vmin;
   }
   .tool {
     margin: 1rem;
@@ -175,7 +196,7 @@ body {
   .pickaxeTool div {
     height: 60px;
   }
-  .AxeTool div {
+  .axeTool div {
     height: 70px;
   }
   .shovelTool div {
@@ -189,8 +210,9 @@ body {
 
   .reset-btn {
     margin-right: 0.5rem;
+    margin-left: 0.8rem;
     padding: 1rem;
-    font-size: 20px;
+    font-size: 18px;
   }
 }
 
@@ -200,18 +222,10 @@ body {
   background: lightskyblue;
 }
 
-/* [data-is-right="false"] {
-
-  animation-name: blink;
-  animation-duration: 0.5s;
+.tile {
+  border: 0px solid white;
 }
 
-
-
-@keyframes blink {
-  from {
-  }
-  to {
-    background: red;
-  }
-} */
+.tile:hover {
+  border: 1px solid rgb(194, 231, 253);
+}

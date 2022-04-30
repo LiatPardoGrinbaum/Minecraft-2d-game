@@ -6,6 +6,9 @@ boxes.forEach((box) => {
   if (box.getAttribute("data-color") === "purple") {
     box.setAttribute("data-is-active", false);
   }
+  if (box.getAttribute("data-is-active")) {
+    console.log(box);
+  }
   console.log(box.getAttribute("data-is-active"));
 });
 
