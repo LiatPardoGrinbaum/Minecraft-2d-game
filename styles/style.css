@@ -149,6 +149,12 @@ body {
   margin-bottom: 0.5rem;
 }
 
+.storages {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .reset-btn {
   margin: 1rem 0;
   padding: 0.3rem;
@@ -156,7 +162,10 @@ body {
   font-size: 0.9rem;
   border-radius: 10px;
 }
-.storage {
+.storage,
+.storage2,
+.storage3,
+.storage4 {
   width: 25px;
   height: 25px;
   border: 2px solid white;
@@ -191,9 +200,10 @@ body {
     max-width: 400px;
     height: 22vmin;
     box-shadow: none;
+    flex-wrap: wrap;
   }
   .tool {
-    margin: 1rem;
+    /* margin: 1rem; */
   }
   .pickaxeTool div {
     height: 50px;
@@ -217,6 +227,9 @@ body {
     margin-left: 0.8rem;
     padding: 1rem;
     font-size: 18px;
+  }
+  .storages {
+    flex-direction: row;
   }
 }
 

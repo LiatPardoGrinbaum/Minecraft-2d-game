@@ -30,6 +30,7 @@ const game = {
   storage: document.querySelector(".storage"),
   tools: setTools(),
   tiles: setTiles(),
+  // countStone: 0,
 };
 
 //create the textures elements as divs and draw the board game by giving it attributes and classes
@@ -173,11 +174,7 @@ game.storage.addEventListener("click", function () {
     for (let tile of tiles) {
       tile.addEventListener("click", function () {
         const isActive = this.getAttribute("data-is-active");
-
         if (game.storage.getAttribute("data-name") !== "null") {
-          console.log(typeof game.storage.getAttribute("data-name"));
-          console.log(game.storage.getAttribute("data-name"));
-          console.log("hii");
           if (isActive === "false" || this.getAttribute("data-name") === "sky") {
             const name = game.storage.getAttribute("data-name");
             console.log(game.storage);
@@ -191,3 +188,31 @@ game.storage.addEventListener("click", function () {
     }
   }
 });
+
+// const stoneBank =[]
+// const stoneBank=document.createElement("div")
+// game.storage.appendChild(stoneBank)
+// counter=0
+
+// game.storage.addEventListener("click", function () {
+//   resetDataTools();
+//   this.style.border = "2px solid blue";
+//   if (game.countStone > 0) {
+//     for (let tile of tiles) {
+//       tile.addEventListener("click", function () {
+//         const isActive = this.getAttribute("data-is-active");
+//         if (game.countStone > 0) {
+//           if (this.getAttribute("data-name") === "sky" || isActive === "false") {
+//             this.setAttribute("data-is-active", "true");
+//             this.setAttribute("data-name", "stone");
+//             game.countStone--;
+//             console.log(game.countStone);
+//           }
+//         }
+//       });
+//     }
+//   }
+//   if (game.countStone === 0) {
+//     game.storage.setAttribute("data-name", "null");
+//   }
+// });
