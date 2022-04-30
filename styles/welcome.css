@@ -71,7 +71,7 @@ body {
 
 @media (max-width: 768px) {
   .container p {
-    width: 50vw;
+    width: 90vw;
     font-size: 16px;
   }
   .start-btn {
