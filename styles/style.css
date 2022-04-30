@@ -202,9 +202,9 @@ body {
     box-shadow: none;
     flex-wrap: wrap;
   }
-  .tool {
-    /* margin: 1rem; */
-  }
+  /* .tool {
+    margin: 1rem;
+  } */
   .pickaxeTool div {
     height: 50px;
   }
