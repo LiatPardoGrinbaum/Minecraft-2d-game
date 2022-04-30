@@ -188,25 +188,28 @@ body {
   .tools {
     flex-direction: row;
     margin-top: 1rem;
-    max-width: 450px;
+    max-width: 400px;
     height: 22vmin;
+    box-shadow: none;
   }
   .tool {
     margin: 1rem;
   }
   .pickaxeTool div {
-    height: 60px;
+    height: 50px;
   }
   .axeTool div {
-    height: 70px;
+    height: 60px;
   }
   .shovelTool div {
-    height: 70px;
+    height: 60px;
   }
+
   .board {
     max-width: 450px;
     max-height: 450px;
     margin-top: 1rem;
+    box-shadow: none;
   }
 
   .reset-btn {

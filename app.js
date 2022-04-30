@@ -166,27 +166,19 @@ function mainGame() {
 mainGame();
 
 game.storage.addEventListener("click", function () {
-  console.log(this);
-  // pickAxe.style.backgroundColor = "rgb(129, 198, 255";
-  // shovel.style.backgroundColor = "rgb(129, 198, 255";
-  // axe.style.backgroundColor = "rgb(129, 198, 255";
   resetDataTools();
   this.style.border = "2px solid blue";
 
   if (this.getAttribute("data-name") !== "null") {
     for (let tile of tiles) {
       tile.addEventListener("click", function () {
-        // console.log(tile);
         const isActive = this.getAttribute("data-is-active");
-        // console.log("this is", this);
-        // console.log("isActive", isActive);
+
         if (game.storage.getAttribute("data-name") !== "null") {
           console.log(typeof game.storage.getAttribute("data-name"));
           console.log(game.storage.getAttribute("data-name"));
           console.log("hii");
           if (isActive === "false" || this.getAttribute("data-name") === "sky") {
-            // console.log("inside if", this);
-
             const name = game.storage.getAttribute("data-name");
             console.log(game.storage);
             this.setAttribute("data-name", name);

@@ -68,3 +68,17 @@ body {
     opacity: 1;
   }
 }
+
+@media (max-width: 768px) {
+  .container p {
+    width: 50vw;
+    font-size: 16px;
+  }
+  .start-btn {
+    padding: 0.6rem 0.3rem 0.5rem 0.5rem;
+    font-family: "Press Start 2P", cursive;
+    border: 2px solid black;
+    background-color: aliceblue;
+    font-size: 18px;
+  }
+}
