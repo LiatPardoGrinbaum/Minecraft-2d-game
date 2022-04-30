@@ -246,3 +246,11 @@ body {
 .tile:hover {
   border: 1px solid rgb(194, 231, 253);
 }
+
+.alarm {
+  border: 1px solid red;
+}
+
+.alarm2 {
+  background-color: red;
+}

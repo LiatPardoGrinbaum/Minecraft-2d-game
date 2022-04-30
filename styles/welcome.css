@@ -53,10 +53,11 @@ body {
 }
 
 .container p {
-  font-size: 12px;
+  max-width: 400px;
+  font-size: 14px;
   background-color: rgba(143, 188, 143, 0.7);
   padding: 0.2rem;
-  width: 30vw;
+  /* width: 30vw; */
 }
 
 @keyframes transitionIn {

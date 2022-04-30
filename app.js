@@ -133,6 +133,7 @@ function isValid(tile) {
 
 function isNotValid(tile) {
   tile.setAttribute("data-is-active", "true");
+
   // tile.style.border = "red 1px solid";
 }
 function mainGame() {
