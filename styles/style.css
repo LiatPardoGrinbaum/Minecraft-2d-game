@@ -22,9 +22,9 @@ body {
   /* animation: transitionIn 0.75s; */
   /* border: black 1px solid; */
   width: 100%;
-  animation: transitionIn 2.5s;
+  /* animation: transitionIn 2.5s; */
 }
-@keyframes transitionIn {
+/* @keyframes transitionIn {
   from {
     opacity: 0;
     transform: translateY(-100px);
@@ -32,7 +32,7 @@ body {
   to {
     opacity: 1;
   }
-}
+} */
 
 .board-wrap {
   display: flex;
@@ -177,6 +177,7 @@ body {
 @media (max-width: 768px) {
   .container {
     flex-direction: column;
+    height: 100vh;
   }
   .side-bar {
     flex-direction: row;
@@ -203,8 +204,8 @@ body {
     height: 70px;
   }
   .board {
-    width: 500px;
-    height: 500px;
+    max-width: 450px;
+    max-height: 450px;
     margin-top: 1rem;
   }
 
