@@ -46,11 +46,11 @@ body {
   color: black;
 }
 
-.container h3 {
+/* .container h3 {
   font-size: 16px;
   margin: 0.5rem 0;
   background-color: rgba(143, 188, 143, 0.7);
-}
+} */
 
 .container p {
   max-width: 400px;
@@ -58,6 +58,7 @@ body {
   background-color: rgba(143, 188, 143, 0.7);
   padding: 0.2rem;
   /* width: 30vw; */
+  visibility: hidden;
 }
 
 @keyframes transitionIn {
@@ -82,4 +83,19 @@ body {
     background-color: aliceblue;
     font-size: 18px;
   }
+}
+
+#howToPlay {
+  padding: 0.6rem 0.3rem 0.5rem 0.5rem;
+  font-family: "Press Start 2P", cursive;
+  border: 2px solid black;
+  background-color: aliceblue;
+  font-size: 14px;
+  cursor: pointer;
+  margin-top: 0.5rem;
+}
+
+#howToPlay:hover {
+  cursor: pointer;
+  background-color: greenyellow;
 }
